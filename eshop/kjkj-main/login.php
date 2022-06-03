@@ -24,8 +24,11 @@ include_once 'session.php';
 				{
 
 					$user_data = mysqli_fetch_assoc($result);
-					
-					if($user_data['password'] === $password)
+
+                    $pwdHashed = $user_data["password"];
+                    $checkPwd = password_verify($password, $pwdHashed);
+
+					if($checkPwd === true)
 					{
 
 						$_SESSION['user_type'] = $user_data['user_type'];

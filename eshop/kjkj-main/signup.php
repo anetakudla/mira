@@ -13,10 +13,10 @@ include_once 'session.php';
 
 		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
 		{
-
+            $hash = password_hash($password, PASSWORD_DEFAULT);
 			//save to database
 			$user_id = random_num(20);
-			$query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
+			$query = "insert into users (user_id,user_name,user_type,password) values ('$user_id','$user_name','user','$hash')";
 
 			mysqli_query($conn, $query);
 
