@@ -2,7 +2,7 @@
 
    <div class="flex">
 
-      <a href="xxx.php" class="logo">Admin</a>
+      <a href="index.php" class="logo">Admin</a>
 
       <nav class="navbar">
          

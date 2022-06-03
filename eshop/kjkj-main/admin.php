@@ -1,12 +1,11 @@
 <?php
 include_once 'session.php';
 if ($_SESSION['user_type'] != 'admin'){
-   header("location: xxx.php");
+   header("location: index.php");
    exit();
 }
 
 @include 'connection.php';
-@include 'config.php';
 if(isset($_POST['add_product'])){
    $p_name = $_POST['p_name'];
    $p_price = $_POST['p_price'];

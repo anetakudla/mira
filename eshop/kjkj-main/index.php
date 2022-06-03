@@ -1,3 +1,8 @@
+<?php
+include_once 'session.php';
+@include 'connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,8 +44,20 @@
                     <li class="nav-item"><a class="nav-link" href="#about">O nás</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Produkty</a></li>
                     <li class="nav-item"><a class="nav-link" href="#signup">Kontakt</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.php">Přihlášení</a></li>
-
+                    <?php if(!isset($_SESSION['user_type'])){
+                        echo "<li class='nav-item'><a class='nav-link' href='login.php'>Košík 🛒<img scr='../assets/img/cart.png'></a></li>'";
+                    }
+                    else if($_SESSION['user_type'] == "user"){
+                        echo "<li class='nav-item'><a class='nav-link' href='cart.php'>Košík 🛒<img scr='../assets/img/cart.png'></a></li>'";
+                    } else if($_SESSION['user_type'] == "admin") {
+                        echo "<li class='nav-item'><a class='nav-link' href='admin.php'>Administrace<img scr='../assets/img/cart.png'></a></li>'";
+                    }
+                    if (!isset($_SESSION['user_id'])){
+                        echo "<li class='nav-item'><a class='nav-link' href='login.php'>Přihlášení</a></li>";
+                    } else{
+                        echo "<li class='nav-item'><a class='nav-link' href='logout.php'>Odhlásit se</a></li>";
+                    }
+                    ?>
                 </ul>
             </div>
         </div>

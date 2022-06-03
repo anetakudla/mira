@@ -1,6 +1,6 @@
 <?php
 include_once 'session.php';
-@include 'config.php';
+@include 'connection.php';
 
 if(isset($_POST['update_update_btn'])){
    $update_value = $_POST['update_quantity'];

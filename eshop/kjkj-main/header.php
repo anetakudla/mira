@@ -2,7 +2,7 @@
 
    <div class="flex">
 
-      <a href="xxx.php" class="logo">DuckDuck</a>
+      <a href="index.php" class="logo">DuckDuck</a>
 
       <nav class="navbar">
          <a href="products.php">Produkty</a>
