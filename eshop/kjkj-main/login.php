@@ -30,6 +30,7 @@ include_once 'session.php';
 
 						$_SESSION['user_type'] = $user_data['user_type'];
 						$_SESSION['user_id'] = $user_data['user_id'];
+                        $_SESSION['user_name'] = $user_data['user_name'];
 						
 
 						if ($_SESSION['user_type'] == "admin") {

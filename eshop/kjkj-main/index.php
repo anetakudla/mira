@@ -41,6 +41,9 @@ include_once 'session.php';
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
+                    <?php if (isset($_SESSION['user_name']))
+                        echo "<li class='nav-item'><a class='nav-link' href='#'>" . ucfirst($_SESSION['user_name']) ."</a></li>'";
+                    ?>
                     <li class="nav-item"><a class="nav-link" href="#about">O nás</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Produkty</a></li>
                     <li class="nav-item"><a class="nav-link" href="#signup">Kontakt</a></li>
